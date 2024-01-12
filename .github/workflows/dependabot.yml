@@ -5,9 +5,9 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "03:48"
+      time: "06:39"
 #      timezone: "Asia/Kolkata"
-#    target-branch: "master"
+#    target-branch: "magit ster"
     commit-message:
       prefix: "maven"
 
