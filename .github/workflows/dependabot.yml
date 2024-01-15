@@ -1,21 +1,42 @@
 version: 2
 
-updates:
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      -cron: '35 12 * *'
+#updates:
+#  - package-ecosystem: "maven"
+#    directory: "/"
+#    schedule:
+##      -cron: '35 12 * *'
 #      interval: "daily"
 #      time: "12:35"
-      timezone: "Asia/Kolkata"
-    target-branch: "main"
-    commit-message:
-      prefix: "maven"
+#      timezone: "Asia/Kolkata"
+#    target-branch: "main"
+#    commit-message:
+#      prefix: "maven"
 
 
-#on:
-#  schedule:
-#    -cron : '35 12 * *'
+on:
+  schedule:
+    - cron: '10 09 * * *'
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Dependabot
+        uses: github/dependabot-action/setup@v2
+        with:
+          package-manager: maven
+#        run: |
+#          echo "Running Dependabot"
 
 #jobs:
 #  dependabot:
