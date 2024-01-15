@@ -4,16 +4,18 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      -cron: '01 09 * *'
-      interval: "daily"
-      time: "12:35"
+      -cron: '35 12 * *'
+#      interval: "daily"
+#      time: "12:35"
       timezone: "Asia/Kolkata"
-    target-branch: "master"
+    target-branch: "main"
     commit-message:
       prefix: "maven"
-on:
-  schedule:
-    -cron : '35 12 * *'
+
+
+#on:
+#  schedule:
+#    -cron : '35 12 * *'
 
 #jobs:
 #  dependabot:
