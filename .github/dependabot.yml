@@ -8,10 +8,5 @@ updates:
     - package-ecosystem: "maven"
     directory: "/"
     schedule:
-#      -cron: '35 12 * *'
       interval: "daily"
-      time: "09:00"
-      timezone: "Asia/Kolkata"
-    target-branch: "main"
-    commit-message:
-      prefix: "maven"
+   
