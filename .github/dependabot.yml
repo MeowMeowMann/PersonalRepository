@@ -3,36 +3,36 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
-# version: 2
-# updates:
-#     - package-ecosystem: "maven"
-#     directory: "/"
-#     schedule:
-#       interval: "daily"
-name: Dependabot
+version: 2
+updates:
+    - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+# name: Dependabot
 
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Run daily
 
-jobs:
-  dependabot:
-    runs-on: ubuntu-latest
+# jobs:
+#   dependabot:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: '11'
+#       - name: Set up JDK
+#         uses: actions/setup-java@v2
+#         with:
+#           distribution: 'adopt'
+#           java-version: '11'
 
-      # Dependabot is included as a separate GitHub Action
-      - name: Dependabot
-        uses: github/dependabot-action/setup@v2
-        with:
-          # Specify the package manager (e.g., maven)
-          package-manager: maven
+#       # Dependabot is included as a separate GitHub Action
+#       - name: Dependabot
+#         uses: github/dependabot-action/setup@v2
+#         with:
+#           # Specify the package manager (e.g., maven)
+#           package-manager: maven
    
